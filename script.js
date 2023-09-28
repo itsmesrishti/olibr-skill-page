@@ -6,12 +6,12 @@ indexHeader.addEventListener('click', function() {
     if (collapsibleList.style.display === "none") {
         collapsibleList.style.display = "block";
         document.querySelector('#list-header i').classList.remove("fa-caret-down");
-		document.querySelector('#list-header i').classList.add("fa-caret-up");
+	document.querySelector('#list-header i').classList.add("fa-caret-up");
     }
     else {
         collapsibleList.style.display = "none";
         document.querySelector('#list-header i').classList.remove("fa-caret-up");
-		document.querySelector('#list-header i').classList.add("fa-caret-down");
+	document.querySelector('#list-header i').classList.add("fa-caret-down");
     }
 });
 
