@@ -21,7 +21,7 @@ indexHeader.onclick = function() {
 	document.querySelector('#list-header i').classList.add("fa-caret-down");
     }
 	
-});
+};
 
 // apply styles to clicked list item and remove from previous item
 // change header content depending on link clicked
@@ -32,7 +32,6 @@ for (var i = 0; i < listContents.length; i++) {
 		// to identify the link clicked
 		var link = e.target.href;
 		var hrefLink = link.split("#")[1];
-		alert(hrefLink);
 
 		// remove style from previously selected link
 		document.querySelector("#collapsible-list li a.active").setAttribute('class', '');
