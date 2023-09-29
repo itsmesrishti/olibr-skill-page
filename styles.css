@@ -550,6 +550,12 @@ h2 {
     font-size: 1.5rem;
     left: 1.2rem;
 }
+.active {
+    color: black !important;
+}
+.mobile-contents ul li:has(.active)::before {
+    color: black;
+}
 .desktop-contents {
     display: none;
 }
