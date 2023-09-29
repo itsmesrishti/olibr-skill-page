@@ -50,6 +50,6 @@ for (var i = 0; i < listContents.length; i++) {
 		// to close the list block after user clicks on the link
         	collapsibleList.style.display = "";
 
-	}
+	});
 					 
 }
