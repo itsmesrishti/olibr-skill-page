@@ -41,7 +41,6 @@ for (var i = 0; i < listContents.length; i++) {
 		
 		// to grab the content of the link clicked
 		var newHeaderContent = document.querySelector("a[href='#" + hrefLink + "']").innerText;
-		alert(newHeaderContent);
 
 		// to change the content of the header with the link clicked content and also the icon
 		document.querySelector("#list-header p").innerHTML = newHeaderContent;
