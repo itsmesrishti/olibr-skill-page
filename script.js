@@ -4,7 +4,7 @@ const collapsibleList = document.getElementById("collapsible-list");
 const listContents = document.querySelectorAll("#collapsible-list li a")
 
 // open & close collapsible list
-indexHeader.addEventListener('click', function() {
+indexHeader.onclick = function() {
 	
     if (collapsibleList.style.display === "") {
 	// to show the list block
