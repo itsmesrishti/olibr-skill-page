@@ -406,6 +406,11 @@ h2 {
     margin-top: 1.45rem;
     font-size: .8rem;
     border-radius: .4rem;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+.profile-card .btn:hover {
+    background-color: #49a1aa;
+    color: white;
 }
 .candidate-carousel::-webkit-scrollbar {
     display: none;
