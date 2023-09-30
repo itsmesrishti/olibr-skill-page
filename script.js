@@ -2,8 +2,8 @@ const indexHeader = document.getElementById("list-header");
 const collapsibleListBox = document.getElementById("collapsible-list");
 
 // const listContents = document.querySelectorAll(".info-section .menu a");
-const mobileList = document.querySelectorAll("#collapsible-list li a");
-const desktopList = document.querySelectorAll("#desktop-list li a");
+// const mobileList = document.querySelectorAll("#collapsible-list li a");
+// const desktopList = document.querySelectorAll("#desktop-list li a");
 
 
 // open & close collapsible list
@@ -26,53 +26,65 @@ indexHeader.onclick = function() {
 	
 };
 
-// apply styles to clicked list item and remove from previous item
-// change header content depending on link clicked
-for (var i = 0; i < mobileList.length; i++) {
-	
-	mobileList[i].addEventListener('click', function(e) {
-
-		// to identify the link clicked
-		var link = e.target.href;
-		var hrefLink = link.split("#")[1];
-
-		// remove style from previously selected link
-		document.querySelector("#collapsible-list li a.active").setAttribute('class', '');
-
-		// add style to the link user clicked
-		document.querySelector("#collapsible-list a[href='#" + hrefLink + "']").setAttribute('class', 'active');
-		
-		// to grab the content of the link clicked
-		var newHeaderContent = document.querySelector("#collapsible-list a[href='#" + hrefLink + "']").innerText;
-
-		// to change the content of the header with the link clicked content and also the icon
-		document.querySelector("#list-header p").innerHTML = newHeaderContent;
-		document.querySelector("#list-header i").setAttribute('class', 'fa-solid fa-caret-down');
-
-		// to close the list block after user clicks on the link
-        collapsibleListBox.style.display = "";
-
-	});
-}
-
-
-// for desktop content list
-for (var i = 0; i < desktopList.length; i++) {
-	desktopList[i].addEventListener('click', function(e) {
-
-		// to identify the link clicked
-		var link = e.target.href;
-		var hrefLink = link.split("#")[1];
-
-		// remove style from previously selected link
-		document.querySelector("#desktop-list li a.active").setAttribute('class', '');
-
-		// add style to the link user clicked
-		document.querySelector("#desktop-list a[href='#" + hrefLink + "']").setAttribute('class', 'active');
-
-
-	});
-}
-
 
 // scroll spy
+const navLinksDesktop = document.querySelectorAll('#desktop-list li a');
+const navLinksMobile = document.querySelectorAll('#collapsible-list li a');
+const topics = document.querySelectorAll(".topic");
+
+
+document.querySelector(".detailed-info").addEventListener('scroll', function() {
+
+    var currentTopic = "topic-1";
+        
+	function myFunction(x) {
+    	if (x.matches) {
+    		topics.forEach(function(topic) {
+                var containerTop = document.querySelector(".info-section").offsetTop;
+                var diff = topic.offsetTop - containerTop;
+    	    	if (document.querySelector(".detailed-info").scrollTop >= diff - 300) {
+    	        	currentTopic = topic.id;
+    		}
+    	});
+
+            navLinksDesktop.forEach(function(link) {
+                if(link.href.includes(currentTopic)) {
+                    document.querySelector('.active').classList.remove('active');
+                    link.classList.add('active');
+                };
+            });
+        }
+        else {
+            topics.forEach(function(topic) {
+                var containerTop = document.querySelector(".info-section").offsetTop;
+                var diff = topic.offsetTop - containerTop;
+                if (document.querySelector(".detailed-info").scrollTop >= diff - 380) {
+                    currentTopic = topic.id;
+                }
+            });
+
+            navLinksMobile.forEach(function(link) {
+                if(link.href.includes(currentTopic)) {
+                    document.querySelector('.active').classList.remove('active');
+                    link.classList.add('active')
+                };
+            });
+
+			// to grab the content of the link clicked
+			var newHeaderContent = document.querySelector("#collapsible-list a[href='#" + currentTopic + "']").innerText;
+			
+			// to change the content of the header with the link clicked content and also the icon
+			document.querySelector("#list-header p").innerHTML = newHeaderContent;
+			document.querySelector("#list-header i").setAttribute('class', 'fa-solid fa-caret-down');
+
+			// to close the list block after user clicks on the link
+			collapsibleListBox.style.display = "";
+
+        }
+    };
+
+	var x = window.matchMedia("(min-width: 700px)");
+    myFunction(x);
+    x.addEventListener('change', myFunction );
+            
+});
