@@ -605,7 +605,7 @@ h2 {
     position: relative;
     left: -.5rem;
 }
-.desktop-contents ul li.current-topic::before {
+.desktop-contents ul li:has(.active)::before {
     content: '';
     display: inline-block;
     width: .5rem;
