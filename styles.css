@@ -657,6 +657,13 @@ h2 {
     color: #24575e;
     text-transform: capitalize;
 }
+.info-section-break {
+    width: 100%;
+    height: .2rem;
+    background-color: lightgray;
+    border: none;
+    margin: 3rem 0;
+}
 
 /* HIRING FUNNEL SECTION & WHY JOIN SECTION */
 .hiring-funnel, .why-join-olibr {
