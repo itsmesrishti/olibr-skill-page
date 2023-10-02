@@ -41,8 +41,6 @@ body {
 .carousel-outer-wrapper {
     width: 100%;
     display: flex;
-    /* flex-basis: 100%;
-    flex-wrap: wrap; */
     overflow: auto;
 }
 .carousel-inner-wrapper {
@@ -59,11 +57,10 @@ body {
 .accordion {
     display: grid;
     grid-template-columns: 1fr;
-    margin: 1.3rem 0;
+    margin: 1.7rem 0 1.3rem;
     font-size: .85rem;
-    /* gap: 4rem; */
 }
-.acc-item .collapsed {
+.hide {
     display: none;
 }
 .acc-item .question {
@@ -72,9 +69,11 @@ body {
     font-weight: 500;
     gap: .6rem;
     color: #271a3e;
+    cursor: pointer;
+    font-size: .8rem;
 }
 .acc-item hr {
-    margin: 1.2rem 0 1.2rem 1.2rem;
+    margin: 1.5rem 0 1.5rem 1.2rem;
     border: 1px solid #ebecf3;
 }
 .acc-item .answer {
@@ -105,9 +104,6 @@ body {
     #fff 93%, 
     #49a1aa 0);  */
 }
-/* .info-card.solid {
-    background-color: #ebfcfe2a;
-} */
 .info-card img {
     width: 2rem;
 }
@@ -236,6 +232,7 @@ header nav ul li {
 }
 .hero-image img {
     width: 100%;
+    height: 100%;
 }
 .hero-text h1 {
     font-size: 1.9rem;
@@ -267,19 +264,19 @@ h2 {
 }
 
 /* INTRO SECTION */
-.main-content-1 .intro .details {
+.intro .details {
     color: #271a3e;
     font-weight: 300;
     margin-left: 1.2rem;
     font-size: .9rem;
 }
-.main-content-1 .intro .details li {
+.intro .details li {
     margin-top: .25rem;
 }
-.main-content-1 .intro .details li span {
+.intro .details li span {
     font-weight: 500;
 }
-.main-content-1 .intro .details li::marker {
+.intro .details li::marker {
     color: #90d7de;
     font-size: 1.2rem;
 }
@@ -435,9 +432,8 @@ h2 {
 
 /* FEATURES SECTION */
 .features {
-    padding: 3rem 0rem;
+    padding: 4rem 0rem;
     text-transform: none;
-    /* background-color: olive; */
 }
 .features img {
     width: 2.5rem;
@@ -495,7 +491,8 @@ h2 {
 }
 
 .interview-questions {
-    padding-top: 3rem;
+    padding-top: 4rem;
+    padding-bottom: 2rem;
 }
 
 
@@ -503,7 +500,14 @@ h2 {
 /* INFO SECTION */
 .info-section {
     background-color: #f8f9ff;
-    padding: 2rem 1rem 3rem;
+    padding: 2rem 0rem 3rem;
+}
+.info-section h2 {
+    padding: 0 1rem;
+}
+.mobile-contents {
+    position: sticky;
+    top: 0;
 }
 .mobile-contents-header {
     background-color: #49a1aa;
@@ -521,6 +525,7 @@ h2 {
     margin-top: 1rem;
     padding: 1rem;
     text-align: center;
+    cursor: pointer;
 }
 .mobile-contents-header img {
     width: 1.5rem;
@@ -533,15 +538,14 @@ h2 {
     margin-top: 0;
     display: none;
     background-color: #d4f1f4;
+    width: 100%;
+    height: calc(100vh - 3.5rem);
 }
 .mobile-contents ul li {
     list-style: none;
     position: relative;
-    /* border: 1px solid #49a1aa; */
     height: 2.5rem;
     padding-left: 2.5rem;
-    /* text-align: center; */
-    /* line-height: 2.5rem; */
     font-size: .8rem;
     color: #49a1aa;
     display: flex;
@@ -561,8 +565,15 @@ h2 {
 .mobile-contents ul li:has(.active)::before {
     color: black;
 }
+.desktop-contents ul li:has(.active)::before {
+    color: #eb5c3a;
+}
 .desktop-contents {
     display: none;
+}
+.desktop-contents h3 {
+    color: black;
+    font-family: 'Poppins', sans-serif;
 }
 .desktop-contents ul {
     width: 100%;
@@ -570,15 +581,25 @@ h2 {
     font-size: .75rem;
     line-height: .9rem;
     margin-top: -.5rem;
+    position: relative;
+}
+.desktop-contents ul li {
     list-style: none;
     position: relative;
-    padding-left: 0;
+    padding-left: 1.2rem;
+}
+.desktop-contents ul li::before {
+    content: "\2022";
+    color: #dadada;
+    position: absolute;
+    font-size: 2rem;
+    left: -.4rem;
 }
 .desktop-contents ul::before {
     content: '';
     display: inline-block;
     width: 1px;
-    height: calc(100% - 2rem);
+    height: calc(100% - 2.5rem);
     background: repeating-linear-gradient(
         transparent, 
         transparent 3px,
@@ -586,59 +607,36 @@ h2 {
         #dadada 10px
     );
     position: absolute;
-    left: 0px;
-    top: 2px;
+    left: 0;
+    top: .5rem;
 }
-.desktop-contents ul li {
-    margin-top: .7rem;
-    color: #687076;
-    padding-top: 0;
-    padding-left: .3rem;
-}
-.desktop-contents ul li::before {
-    content: '';
-    display: inline-block;
-    width: .5rem;
-    height: .5rem;
-    border-radius: 50%;
-    background-color: #dadada;
-    position: relative;
-    left: -.5rem;
-}
-.desktop-contents ul li:has(.active)::before {
-    content: '';
-    display: inline-block;
-    width: .5rem;
-    height: .5rem;
-    border-radius: 50%;
-    background-color: #eb5c3a;
-    position: relative;
-    left: -.5rem;
-}
-.detailed-info h3 {
+
+.desktop-contents h3 {
     font-size: 1rem;
     font-weight: 600;
+}
+.detailed-info h3 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
 }
 .info-section ul li,
 .info-section ul li a {
     color: #687076;
     text-decoration: none;
 }
-.desktop-contents ul li.current-topic {
-    color: black;
-    /* background-color: pink; */
-}
+
 .detailed-info {
     width: 100%;
-    height: 30rem;
+    height: 40rem;
     background-color: white;
     border-radius: .5rem;
     padding: 1rem;
     overflow: scroll;
-    margin-top: 1.5rem;
 }
 .detailed-info .topic {
     margin-bottom: 3rem;
+    scroll-margin-top: 4rem;
 }
 .detailed-info .topic p {
     font-size: .8rem;
@@ -647,9 +645,6 @@ h2 {
     font-weight: 300;
     margin-bottom: 1.1rem;
     text-transform: capitalize;
-}
-.detailed-info .topic h2 {
-    margin-bottom: .5rem;
 }
 .detailed-info .topic h4 {
     font-size: .8rem;
@@ -711,12 +706,14 @@ h2 {
     font-size: .9rem;
 }
 .banner h2 {
-    font-weight: 700;
+    font-weight: 600;
+    color: black;
+    font-size: 1.5rem;
 }
 
 /* FAQ SECTION */
 .faq {
-    padding: 2rem 1rem;
+    padding: 2rem 1.5rem 3rem 1rem;
     text-transform: capitalize;
     background-color: #ecf3fe;
 }
@@ -725,6 +722,7 @@ h2 {
     text-decoration: none;
     font-size: .8rem;
     text-transform: uppercase;
+    display: inline-block;
 }
 .faq a span {
     text-transform: lowercase;
@@ -733,7 +731,10 @@ h2 {
     overflow: hidden;
 }
 .faq .acc-item hr {
-    border: 1px solid rgba(0, 0, 0, 0.254);
+    border: 1px solid rgba(211, 211, 211, 0.6);
+}
+.faq .accordion {
+    margin-bottom: 2rem;
 }
 
 
@@ -771,7 +772,6 @@ aside .btn {
 .aside-carousel {
     height: 19rem;
     overflow-y: hidden;
-    /* background-color: pink; */
 }
 .aside-carousel .item {
     width: 19rem;
