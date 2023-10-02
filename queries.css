@@ -74,6 +74,9 @@
         font-size: .85rem;
         line-height: 1.2rem;
     }
+    .acc-item .question {
+        font-size: .9rem;
+    }
 }
 
 @media only screen and (min-width: 410px) {
@@ -101,9 +104,6 @@
 
 /* TABLETS */
 @media only screen and (min-width: 500px) {
-    html {
-        font-size: 18px;
-    }
     .hero-section {
         padding: 2rem 2rem 2.5rem;
     }
@@ -114,18 +114,21 @@
         padding: 3rem 2rem;
     }
     aside {
-        width: 26rem;
+        width: 20rem;
     }
     .detailed-info {
         padding: 1rem 1.5rem;
     }
-    aside .item, aside .share-job {
-        width: 24rem;
+    .aside-carousel .item {
+        width: 18rem;
+    }
+    aside .item {
+        width: 18rem;
         margin: 1rem auto;
     }
-    aside .share-job p {
+    /* aside .share-job p {
         font-size: .85rem;
-    }
+    } */
     .info-section, .why-join-olibr, .faq, .hiring-funnel, .banner {
         padding-left: 1.5rem;
         padding-right: 1.5rem;
@@ -143,10 +146,30 @@
     }
 }
 
-
 @media only screen and (min-width: 700px) {
+    .hero-section {
+        gap: 1rem;
+    }
+    .hero-image, .hero-text {
+        max-width: 30rem;
+        height: max-content;
+    }
+    .hero-text h1 {
+        font-size: 2.1rem;
+    }
+    .hero-image {
+        height: 40vh;
+    }
+    .hero-text {
+        padding-top: 1rem;
+        min-height: 40vh;
+    }
+    .hero-text p {
+        font-size: 1.2rem;
+        line-height: 2rem;
+    }
     .main-content-1, .info-section, .hiring-funnel, 
-    .why-join-olibr, .banner, .faq, aside {
+    .why-join-olibr, .banner, .faq {
         padding-left: 2.5rem;
         padding-right: 2.5rem;
     }
@@ -173,43 +196,76 @@
     .banner-img img {
         width: 20rem;
     }
-    aside {
-        width: 50%;
-        padding: .7rem .7rem 2rem;
-    }
-    .aside-carousel .item {
-        width: 19rem;
-    }
-    aside .item {
-        width: 100%;
-    }
-    .aside-slide2 {
-        gap: 1rem;
-    }
-    .aside-slide4 {
-        gap: .7rem;
-    }
 }
 
 @media only screen and (min-width: 768px) {
-    .hero-section {
-        /* width: 100%; */
+    .hero-image, .hero-text {
+        max-width: 35rem;
+    }
+    .banner  {
         flex-direction: row;
-        gap: 0;
-        min-height: 50vh;
-        margin-top: 0;
+        gap: 1rem;
+        padding-top: 0;
+        padding-bottom: 1.4rem;
     }
-    .hero-text h1 {
-        font-size: 2rem;
-        line-height: 2.7rem;
+}
+
+@media only screen and (min-width: 820px) {
+    .hero-image, .hero-text {
+        max-width: 40rem;
     }
-    .hero-text p {
+    h2 {
+        font-size: 1.7rem;
+    }
+    .intro .details, .features .text {
         font-size: 1rem;
-        line-height: 1.7rem;
+    }
+    .detailed-info .topic p {
+        font-size: .88rem;
+    }
+    .acc-item .answer {
+        font-size: .9rem;
+        line-height: 1.5rem;
+    }
+    .acc-item .question {
+        font-size: .95rem;
+    }
+}
+
+/* menu */
+@media only screen and (min-width: 855px) {
+    .mobile-menu {
+        display: none;
+    }
+    .desktop-menu {
+        display: flex;
+    }
+    header {
+        width: 100%;
+        height: 5.5rem;
+        padding: 1.3rem 1rem;
+    }
+}
+
+/* DESKTOP */
+@media only screen and (min-width: 1024px) {
+    .hero-section {
+        flex-direction: row;
+        gap: 1rem;
+        padding: 5rem 2.5rem;
+        min-height: 50vh;
+    }
+    .hero-text {
+        width: 52%;
+        max-width: none;
     }
     .hero-image {
-        width: 70%;
-        max-width: 30rem;
+        width: 48%;
+        max-width: 27rem;
+    }
+    .hero-text h1 {
+        font-size: 2.3rem;
+        line-height: 2.8rem;
     }
     main {
         display: flex;
@@ -217,23 +273,19 @@
         justify-content: space-between;
     }
     .main-content-1 {
-        width: 65%;
+        width: 68%;
         padding-top: 5rem;
         padding-left: 2rem;
-        /* background-color: olive; */
     }
     .main-content-2 {
         order: 3;
         flex-basis: 100%;
     }
-    .candidate-carousel {
-        width: 100%;
-    }
     aside {
         width: 30%;
         max-width: 16rem;
-        padding-top: .5rem;
-        margin-right: 2rem;
+        padding: .5rem .7rem 5rem;
+        margin-right: 3rem;
         margin-top: 5rem;
     }
     .aside-carousel {
@@ -251,8 +303,9 @@
         width: 100%;
         margin-top: 0;
     }
-    aside .aside-slide1 {
-        height: 17rem;
+    aside .item {
+        width: 100%;
+        margin-top: -1rem;
     }
     .aside-slide1 h4{
         margin-top: 1rem;
@@ -269,142 +322,57 @@
     .aside-slide2, .aside-slide4 {
         height: max-content;
     }
-    aside .stacks {
-        margin-top: -1.2rem;
-    }
     aside .bubble.half {
         width: 48%;
         padding-right: 0rem;
     }
     aside .bubble p {
-        font-size: .5rem;
+        font-size: .6rem;
     }
     aside .bubble {
         padding-left: .3rem;
     }
-    aside .item form input,
-    aside .item form textarea,
-    aside .share-job p {
-        font-size: .6rem;
+    aside .quick-entry-form {
+        margin-top: 1rem;
     }
     aside .socials i {
-        font-size: .7rem;
         margin-right: 0px;
-        width: 1.2rem;
-        height: 1.2rem;
-        line-height: 1.2rem;
+        width: 1.6rem;
+        height: 1.6rem;
+        line-height: 1.6rem;
     }
     aside .share-job {
         width: 100%;
         gap: 5px;
     }
-    .banner  {
-        flex-direction: row;
-        gap: 1rem;
-        padding-top: 0;
-        padding-bottom: 1.4rem;
-    }
-    .info-section {
-        margin-top: 3rem;
-    }
-    .mobile-contents {
-        display: none;
-    }
-    .desktop-contents {
-        display: block;
-    }
-    .info-section {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        gap: 1rem;
-    }
-    .detailed-info {
-        width: 57%;
-    }
-    .info-section .desktop-contents {
-        width: 38%;
-        margin-top: 2rem;
-    }
-    .info-section .desktop-contents h3 {
-        font-size: 1rem;
-    }
-}
-
-
-/* DESKTOP */
-@media only screen and (min-width: 855px) {
-    .mobile-menu {
-        display: none;
-    }
-    .desktop-menu {
-        display: flex;
-    }
-    header {
-        width: 100%;
-        height: 5.5rem;
-        padding: 1.3rem 1rem;
-    }
-}
-
-@media only screen and (min-width: 1024px) {
-    .hero-section {
-        width: 100%;
-        /* padding-left: 10vw; */
-        /* padding-right: 10vw; */
-        gap: 1rem;
-    }
-    .hero-text, .hero-image {
-        max-width: none;
-    }
-    .hero-image {
-        display: flex;
-        justify-content: flex-end;
-    }
-    .hero-image img {
-        max-width: 26rem;
-    }
-    .main-content-1 {
-        width: 68%;
-        padding-right: 1.5rem;
-        /* padding-left: 5vw; */
-    }
     .candidate-carousel {
         width: 100%;
         height: max-content;
         padding: 0;
+        box-shadow: -5px -7px 7px 5px #f8f8fd, 5px 7px 10px 5px #f8f8fd;
     }
-    .carousel-inner-wrapper {
+    .candidate-carousel .carousel-inner-wrapper {
         flex-wrap: wrap;
         justify-content: space-between;
         padding-left: 0;
     }
+    .carousel-indicator {
+        display: none;
+    }
     .profile-card {
-        width: 48%;
+        width: 49%;
         max-width: 27rem;
         height: max-content;
         max-height: 32rem;
         margin: 0 0 1rem 0;
     }
-    .carousel-indicator {
-        display: none;
+    .interview-questions {
+        padding-top: 6rem;
+        padding-bottom: 1rem;
     }
-    aside .bubble p {
-        font-size: .6rem;
-    }
-    .info-section .contents {
-        /* width: 45%; */
-    }
-    .banner {
-        justify-content: space-between;
-    }
-    .faq .accordion {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 10rem;
-        gap: 2rem;
-    }
-    .faq .col-1 .acc-item:last-of-type hr {
-        display: none;
+    .features {
+        padding-top: 5rem;
+        padding-bottom: 6rem;
     }
     .features .features-list {
         flex-direction: column;
@@ -443,51 +411,51 @@
     .info-section {
         padding-left: 2rem;
         padding-right: 2rem;
+        margin-top: 3rem;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 1rem;
     }
-    .interview-questions {
-        padding-bottom: 0;
+    .info-section h2 {
+        padding-left: 0;
     }
-    .interview-questions, .features {
-        margin-top: 2rem;
+    .mobile-contents {
+        display: none;
     }
-    .accordion {
-        font-size: .9rem;
-    }
-    .acc-item .answer {
-        font-size: .8rem;
-        line-height: 1.2rem;
+    .desktop-contents {
+        display: block;
+        scroll-margin-top: 1rem;
     }
     .desktop-contents ul li {
         font-size: .9rem;
         margin-top: 1rem;
         line-height: 1.3rem;
     }
-    .info-section .desktop-contents {
-        width: 35%;
-        /* background-color: pink; */
-    }
     .detailed-info {
         width: 62%;
+        height: 30rem;
     }
-    .faq a {
-        font-size: .9rem;
+    .info-section .desktop-contents {
+        width: 35%;
+        margin-top: 2rem;
     }
-    .faq .accordion {
-        margin-bottom: 3rem;
-    }
-    .info-card h3 {
+    .info-section .desktop-contents h3 {
         font-size: 1rem;
     }
-    .info-card p {
-        font-size: .9rem;
+    .detailed-info h3 {
+        font-size: 1.5rem;
+    }
+    .detailed-info .topic {
+        scroll-margin-top: 1rem;
     }
     .hiring-funnel .deck {
         display: flex;
         gap: .8rem;
     }
-    /* .hiring-funnel .info-card {
-        max-width: 23rem;
-    } */
+    .banner {
+        justify-content: space-between;
+    }
     .why-join-olibr .info-card {
         width: 49%;
     }
@@ -503,11 +471,34 @@
     .why-join-olibr .info-card:nth-of-type(4) {
         background-color: #ebfcfe2a;
     }
+    .accordion {
+        font-size: .9rem;
+    }
+    .acc-item .answer {
+        font-size: .8rem;
+        line-height: 1.2rem;
+    }
+    .faq .accordion {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 10rem;
+        gap: 3rem;
+        margin-top: 3rem;
+        height: 13rem;
+    }
+    .faq .col-1 .acc-item:last-of-type hr {
+        display: none;
+    }
+    .faq a {
+        font-size: .9rem;
+    }
 }
 @media only screen and (min-width: 1200px) {
     .hero-section {
         padding-left: 8vw;
         padding-right: 8vw;
+    }
+    .hero-text p {
+        margin: 1.2rem 0 1.6rem;
     }
     .main-content-1 {
         padding-left: 8vw;
@@ -522,19 +513,18 @@
     .faq .accordion{
         margin-bottom: 4rem;
     }
-} 
+    .aside-slide1 {
+        height: 17rem !important;
+    }
+}
 @media screen and (min-width:1300px) {
     .hero-text h1 {
         font-size: 2.8rem;
         line-height: 4rem;
     }
-    .hero-text p {
-        font-size: 1.2rem;
-        line-height: 2rem;
-    }
     .hero-section {
-        padding-top: 5rem;
-        padding-bottom: 6rem;
+        padding-top: 6rem;
+        padding-bottom: 7rem;
     }
     .features {
         padding-top: 6rem;
@@ -555,15 +545,29 @@
     }
     .main-content-1 {
         padding-left: 11vw;
-        width: 67%;
+        /* width: 69%; */
     }
     aside {
         margin-right: 11vw;
+    }
+    .acc-item .answer {
+        font-size: .9rem;
+        line-height: 1.2rem;
     }
 }
 @media only screen and (min-width: 1440px) {
     aside {
         max-width: 17rem;
+    }
+    .candidate-carousel .carousel-inner-wrapper {
+        gap: .9rem;
+    }
+    aside .bubble p {
+        font-size: .65rem;
+    }
+    .hiring-funnel, .why-join-olibr, .faq {
+        padding-top: 6rem;
+        padding-bottom: 7rem;
     }
 }
 @media screen and (min-width:2560px) {
