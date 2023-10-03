@@ -123,6 +123,7 @@
     }
     .hero-text {
         height: 15rem;
+        height: max-content;
     }
     .main-content-1 {
         padding: 3rem 2rem;
