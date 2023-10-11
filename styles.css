@@ -219,15 +219,11 @@ header nav ul li {
 .main-content-1, .main-content-2, aside, .hero {
     width: 100%;
 }
-.main-content-2 {
-    background-color: green;
-}
 
 
 /* MAIN CONTENT 1 SECTION */
 .main-content-1 {
     padding: 2rem 1rem;
-    background-color: orange;
 }
 h2 {
     font-weight: 500;
@@ -714,8 +710,7 @@ h2 {
 aside {
     width: 90%;
     height: max-content;
-    /* background-color: #f8f8fb; */
-    background-color: yellow;
+    background-color: #f8f8fb; 
     border: 1px solid #e6ebfe;
     padding: 1rem 1rem 3rem;
     margin: 3rem auto;
